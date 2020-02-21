@@ -37,5 +37,23 @@ function extractJiraStoryFromBranch() {
     echo $jiraStory
 }
 
-commitType=$(getCommitType)
-jiraStory=$(extractJiraStoryFromBranch)
+function createPrefix() {
+    commitType=$(getCommitType)
+    jiraStory=$(extractJiraStoryFromBranch)
+
+    prefixItems=()
+    if [ ! -z "$commitType" ]; then
+        prefixItems+=($commitType)
+    fi
+    if [ ! -z "$jiraStory" ]; then
+        prefixItems+=("[${jiraStory}]")
+    fi
+
+    ## join the array items
+    commitPrefix=$(printf "%s" "${prefixItems[@]}")
+
+    echo $commitPrefix
+}
+
+
+echo $(createPrefix)
