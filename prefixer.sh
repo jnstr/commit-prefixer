@@ -55,5 +55,14 @@ function createPrefix() {
     echo $commitPrefix
 }
 
+function gitCommit() {
+    ## tip: add this file to your global gitignore file
+    commitFile="./.commit-template"
 
-echo $(createPrefix)
+    touch $commitFile
+    echo $1 > $commitFile
+    git commit --verbose --template=$commitFile
+    rm -f $commitFile
+}
+
+gitCommit $(createPrefix)
