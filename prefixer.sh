@@ -37,5 +37,5 @@ function extractJiraStoryFromBranch() {
     echo $jiraStory
 }
 
-echo $(getCommitType)
-echo $(extractJiraStoryFromBranch)
+commitType=$(getCommitType)
+jiraStory=$(extractJiraStoryFromBranch)
