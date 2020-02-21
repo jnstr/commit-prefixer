@@ -1,6 +1,24 @@
 # Commit prefixer
 
-This is the convention I use to give extra context to my commits
+This is the convention I use to give extra context to my commits.
+
+It makes your git log look like this:
+
+```shell
+[+] Create a commit with the generated prefix
+[+] Merge the prefixes together
+[R] Store values in variable intead of displaying them
+[+] Try to extract JIRA issue from branch
+```
+
+Or like this when you have the JIRA issue included in your branch:
+
+```shell
+[+][JNSTR-123] Create a commit with the generated prefix
+[+][JNSTR-123] Merge the prefixes together
+[R][JNSTR-123] Store values in variable intead of displaying them
+[+][JNSTR-123] Try to extract JIRA issue from branch
+```
 
 ## Why?
 
