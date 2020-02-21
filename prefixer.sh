@@ -23,4 +23,19 @@ function getCommitType() {
     done
 }
 
+function extractJiraStoryFromBranch() {
+    branchName=$(git rev-parse --abbrev-ref HEAD)
+
+    # remove everything before last slash
+    bareBranchName=${branchName##*/}
+
+    jiraStory=$(echo "${bareBranchName}" | grep -o "^[^-]*-\?[^-]*" | grep -oP "([a-zA-Z0-9]{2,5})(-)([0-9]+[0-9]+)")
+
+    ## uppercase
+    jiraStory=$(echo ${jiraStory^^})
+
+    echo $jiraStory
+}
+
 echo $(getCommitType)
+echo $(extractJiraStoryFromBranch)
