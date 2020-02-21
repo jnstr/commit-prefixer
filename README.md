@@ -13,6 +13,15 @@ However, gitmoji has some drawbacks:
 
 That's why created my own set of git commit prefix icons. Just one character, and only a limited set.
 
+## Installation
+
+1. Clone this repository
+2. cd into the project directory
+3. `chmod +x prefixer.sh`
+4. `ln -s "$(pwd)/prefixer.sh" /usr/local/bin/commit`
+
+_Note: I just aliased this to `commit` but you can use whatever suits you best_
+
 ## The list
 
 ### `[+]`: Adding a file or feature
