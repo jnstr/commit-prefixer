@@ -65,4 +65,6 @@ function gitCommit() {
     rm -f $commitFile
 }
 
+echo "Please enter your commit type: "
+
 gitCommit $(createPrefix)
